@@ -9,6 +9,9 @@ module.exports = {
       filename: path.resolve(__dirname, "src" , "database" , "database.db")
     },
 
+    pool:{
+      afterCreate: (conn , cb ) => conn.run('PRAGMA foreing_key = ON ' , cb)
+    },
     migrations: {
       directory: path.resolve(__dirname , "src" , "database" , "knex" , "migrations")
     },
