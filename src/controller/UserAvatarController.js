@@ -25,6 +25,8 @@ class UserAvatarController{
         }   
 
         const filename = await diskStorage.saveFile(avatarFileName);
+        
+
         user.avatar = filename;
 
 
